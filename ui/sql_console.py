@@ -40,22 +40,22 @@ def render_sql_console():
         """, unsafe_allow_html=True)
 
     # Natural Language to SQL 
-    st.markdown("**🤖 Natural Language → SQL**")
-    col1, col2 = st.columns([4, 1])
-    with col1:
-        nl_query = st.text_input(
-            "NL Query",
-            placeholder='e.g. "Show me the top 5 customers by total spend"',
-            label_visibility="collapsed",
-            key="nl_query_input"
-        )
-    with col2:
-        gen_btn = st.button("Generate SQL", use_container_width=True, key="gen_sql_btn")
+    #st.markdown("**🤖 Natural Language → SQL**")
+    #col1, col2 = st.columns([4, 1])
+    #with col1:
+     #   nl_query = st.text_input(
+      #      "NL Query",
+       #     placeholder='e.g. "Show me the top 5 customers by total spend"',
+        #    label_visibility="collapsed",
+         #   key="nl_query_input"
+        #)
+    #with col2:
+     #   gen_btn = st.button("Generate SQL", use_container_width=True, key="gen_sql_btn")
 
-    if gen_btn and nl_query:
-        with st.spinner("Generating SQL..."):
-            generated_sql = agent.generate_sql(nl_query)
-            st.session_state.current_sql = generated_sql
+    #if gen_btn and nl_query:
+     #   with st.spinner("Generating SQL..."):
+      #      generated_sql = agent.generate_sql(nl_query)
+       #     st.session_state.current_sql = generated_sql
 
     # SQL Editor 
     st.markdown("**📝 SQL Editor**")
