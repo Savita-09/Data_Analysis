@@ -143,7 +143,7 @@ def render_sql_console():
                     with vc1:
                         viz_type = st.selectbox(
                             "Chart type",
-                            ["Bar", "Line", "Scatter"],
+                            ["Bar"],
                             key="sql_viz_type"
                         )
                     with vc2:
@@ -168,38 +168,7 @@ def render_sql_console():
                         )
                         apply_theme(fig)
                         st.plotly_chart(fig, use_container_width=True)
-                        
-                    if text_result_cols and viz_type == "line":
-                        x_col_viz = st.selectbox(
-                            "X axis",
-                            text_result_cols,
-                            key="sql_viz_x"
-                        )
-                        from utils.charts import apply_theme, DARK_THEME
-                        import plotly.express as px
-                        fig = px.line(
-                            result_df.head(30),
-                            x=x_col_viz, y=y_col_viz,
-                            color_discrete_sequence=DARK_THEME["colorway"]
-                        )
-                        apply_theme(fig)
-                        st.plotly_chart(fig, use_container_width=True)
-                        
-                    if text_result_cols and viz_type == "Scatter":
-                        x_col_viz = st.selectbox(
-                            "X axis",
-                            text_result_cols,
-                            key="sql_viz_x"
-                        )
-                        from utils.charts import apply_theme, DARK_THEME
-                        import plotly.express as px
-                        fig = px.scatter(
-                            result_df.head(30),
-                            x=x_col_viz, y=y_col_viz,
-                            color_discrete_sequence=DARK_THEME["colorway"]
-                        )
-                        apply_theme(fig)
-                        st.plotly_chart(fig, use_container_width=True)
+                
 
     # Schema Reference 
     with st.expander("📋 Schema Reference"):
