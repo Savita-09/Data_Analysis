@@ -23,7 +23,7 @@ def render_sidebar():
             "API Key",
             value=st.session_state.api_key,
             type="password",
-            placeholder="sk-ant-...",
+            placeholder="gsk_vz...",
             label_visibility="collapsed",
             help="Required for AI-powered insights and chat"
         )
