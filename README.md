@@ -35,4 +35,4 @@ Interactive filtering and sorting
 Statistical summaries for each column
 Data type analysis and distribution information
 
-# Project Link : https://data-analysis-agent-x09nfh3k203.streamlit.app
+## 🌐 Live Demo : https://data-analysis-agent-x09nfh3k203.streamlit.app
